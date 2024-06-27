@@ -1,23 +1,28 @@
 const App = () => {
-    const handleClickMinusStep = () => console.log('Clicou no menos do intervalo')
-    const handleClickMinusCount = () => console.log('Clicou no menos da contagem')
-    const handleClickPlusStep = () => console.log('Clicou no mais do intervalo')
-    const handleClickPlusCount = () => console.log('Clicou no mais da contagem')
-
+    const handleClickToggle = (e) => console.log(e.target.textContent)
+    const handleClickPrevious = (e) => console.log(e.target.textContent)
+    const handleClickNext = (e) => console.log(e.target.textContent)
     return (
-        <div className="container">
-            <div className="count">
-                <button onClick={handleClickMinusStep}>-</button>
-                <h2>Intervalo: 1</h2>
-                <button onClick={handleClickPlusStep} >+</button>
+        <>
+            <div className="container-close">
+                <button onClick={handleClickToggle} className="close">Fechar</button>
             </div>
-            <div className="count">
-                <button onClick={handleClickMinusCount}>-</button>
-                <h2>Contagem: 0</h2>
-                <button onClick={handleClickPlusCount}>+</button>
+
+            <div className="steps">
+                <div className="numbers">
+                    <div className="active">1</div>
+                    <div>2</div>
+                    <div>3</div>
+                </div>
+
+                <p className="message">Passo 1: Entender o problema do cliente</p>
+
+                <div className="buttons">
+                    <button onClick={handleClickPrevious} >Anterios</button>
+                    <button onClick={handleClickNext}>Próximo</button>
+                </div>
             </div>
-            <h2>Hoje é quarta, 26 jun. de 2024</h2>
-        </div>
+        </>
     )
 }
 
